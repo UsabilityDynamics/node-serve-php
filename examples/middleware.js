@@ -3,7 +3,7 @@
  *
  */
 var express = require('express')
-var phpServer = require( '../../' );
+var phpServer = require( '../' );
 var app = module.exports = express();
 
 // Configuration
@@ -27,6 +27,6 @@ app.get( '/', function( req, res ) {
   res.send( 404, 'nothing found.' );
 });
 
-app.listen(process.env.PORT || 8080, process.env.IP || 'localhost', function() {  
+app.listen(process.env.PORT || null, process.env.IP || 'localhost', function() {  
   console.log("Express server listening on port %d in %s host", this.address().port, this.address().address);  
 });

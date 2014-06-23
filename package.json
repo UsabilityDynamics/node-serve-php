@@ -65,7 +65,8 @@
     "settings": "^0.1.1",
     "temp": "^0.8.0",
     "which": "^1.0.5",
-    "winston": "^0.7.3"
+    "winston": "^0.7.3",
+    "response-time": "~2.0.0"
   },
   "devDependencies": {
     "casper": "^0.1.1",

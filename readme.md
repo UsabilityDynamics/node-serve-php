@@ -20,6 +20,14 @@ For demonstration purposes only, we kill any existing php-fpm processes.
     
 If you notice that php-fpm instances are being spawned but not destroyed, you may (for now) kill them like so:
     killall -9 php-fpm
+
+### Environment Variable Overrides
+  * DEBUG
+  * SERVEPHP_BINPATH
+  * SERVEPHP_WEBROOT
+  * SERVEPHP_CONFIGPATH
+  * SERVEPHP_INIPATH
+  * SERVEPHP_SOCKETPATH
     
 ## License
 

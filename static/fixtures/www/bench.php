@@ -1,4 +1,6 @@
 <?php
+phpinfo();
+die();
 date_default_timezone_set('America/Los_Angeles');
 
 /*
@@ -80,4 +82,3 @@ date_default_timezone_set('America/Los_Angeles');
 	}
 	echo str_pad("-", 38, "-") . "\n" . str_pad("Total time:", 25) . " : " . $total ." sec.</pre>";
 	
-	>>>>>>> External Changes

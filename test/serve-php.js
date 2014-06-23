@@ -7,14 +7,11 @@ module.exports = {
   
   'serve-php': {
     
-    'returns expected methods': function() {
-      
-      var servePHP = require( '../' );
-      
+    'returns expected methods': function() {      
+      var servePHP = require( '../' );      
       servePHP.should.have.property( 'prototype' );
       servePHP.should.have.property( 'createServer' );
-      servePHP.should.have.property( 'debug' );
-      
+      servePHP.should.have.property( 'debug' );      
     }
      
   }
