@@ -1,19 +1,26 @@
 Node.js middleware for PHP
 
 ## Getting Started
-Install the module with: `npm install node-php-fpm`
+Install the module with: `npm install serve-php`
 
 ```javascript
-var node_php_fpm = require('node-php-fpm');
-node_php_fpm.awesome(); // "awesome"
+var servePHP = require( 'serve-php' ).createServer();
+var express = require( 'express' );
+app.use( servePHP.router );
 ```
-## Usage
+## Examples
 
+For demonstration purposes only, we kill any existing php-fpm processes.
+    node examples/middleware/server.js
+    
+If you notice that php-fpm instances are being spawned but not destroyed, you may (for now) kill them like so:
+    killall -9 php-fpm
+    
 ## License
 
 (The MIT License)
 
-Copyright (c) 2013 Usability Dynamics, Inc. &lt;info@usabilitydynamics.com&gt;
+Copyright (c) 2014 Usability Dynamics, Inc. &lt;info@usabilitydynamics.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

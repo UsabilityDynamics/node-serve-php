@@ -4,8 +4,9 @@
  */
 var express = require('express')
 var phpServer = require( '../../' );
+var app = module.exports = express();
 
-var app = module.exports = express.createServer();
+app.set('title', 'My Site');
 
 // Configuration
 var php = phpServer.createServer({
@@ -13,22 +14,21 @@ var php = phpServer.createServer({
   serveStatic: true,
   rewrites: {},
   config: {}
-}) 
-  
-app.configure(function(){
-  app.use(express.bodyParser());
-  app.use(express.methodOverride());
-  app.use( php.router );
-  app.use(app.router);
-  app.use(express.static(__dirname + '/public'));
-  app.use(express.errorHandler());
 });
 
 // Routes
-app.get('/_info', function( req, res, next ) {
-    res.send( 'server up' );
+app.get('/_status', function( req, res, next ) {
+    res.send( 200, 'server up' );
 });
 
-app.listen(process.env.PORT, process.env.IP);
+// PHP Routes  
+app.use( php.router );
 
-console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+// 404
+app.get( '/', function( req, res ) {
+  res.send( 404, 'nothing found.' );
+});
+
+app.listen(process.env.PORT || 8080, process.env.IP || 'localhost', function() {  
+  console.log("Express server listening on port %d in %s host", this.address().port, this.address().address);  
+});
