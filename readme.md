@@ -8,6 +8,11 @@ var servePHP = require( 'serve-php' ).createServer();
 var express = require( 'express' );
 app.use( servePHP.router );
 ```
+
+Node.js is used to manage the overall processa and internally forwards requests to php-fpm service, which it also spawns and destroys on an instance-by-instance basis.
+
+![Basic](http://content.screencast.com/users/TwinCitiesTech.com/folders/Jing/media/9207de5d-c91e-48be-97ee-e7b783aee0e8/00000650.png)
+
 ## Examples
 
 For demonstration purposes only, we kill any existing php-fpm processes.

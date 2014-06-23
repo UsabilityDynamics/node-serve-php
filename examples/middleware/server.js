@@ -6,11 +6,9 @@ var express = require('express')
 var phpServer = require( '../../' );
 var app = module.exports = express();
 
-app.set('title', 'My Site');
-
 // Configuration
 var php = phpServer.createServer({
-  path: 'public/www',
+  path: require( 'path' ).resolve( '../static/fixtures/www' ),
   serveStatic: true,
   rewrites: {},
   config: {}
