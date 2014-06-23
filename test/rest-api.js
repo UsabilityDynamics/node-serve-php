@@ -12,6 +12,8 @@ module.exports = {
       var phpServer = require( '../' );      
       var app = express();
 
+      return ready();
+      
       // Configuration
       var php = phpServer.createServer({
         path: require( 'path' ).resolve( '../static/fixtues/www' ),
