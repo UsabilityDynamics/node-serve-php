@@ -16,7 +16,7 @@ Node.js is used to manage the overall processa and internally forwards requests 
 ## Examples
 
 For demonstration purposes only, we kill any existing php-fpm processes.
-    node examples/middleware/server.js
+    node examples/middleware.js
     
 If you notice that php-fpm instances are being spawned but not destroyed, you may (for now) kill them like so:
     killall -9 php-fpm

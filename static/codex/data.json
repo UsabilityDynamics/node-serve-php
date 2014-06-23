@@ -1,0 +1,226 @@
+{
+    "project": {
+        "name": "serve-php",
+        "description": "Node.js middleware for PHP",
+        "version": "0.0.1",
+        "url": "http://github.com/UsabilityDynamics/node-serve-php",
+        "logo": "http://media.usabilitydynamics.com/logo.png"
+    },
+    "files": {
+        "lib/fastcgi.js": {
+            "name": "lib/fastcgi.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "lib/serve-php.js": {
+            "name": "lib/serve-php.js",
+            "modules": {},
+            "classes": {},
+            "fors": {
+                "node-php-fpm": 1
+            },
+            "namespaces": {}
+        },
+        "lib/utility.js": {
+            "name": "lib/utility.js",
+            "modules": {},
+            "classes": {
+                "Utility": 1
+            },
+            "fors": {
+                "Utility": 1
+            },
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "node-php-fpm": {
+            "name": "node-php-fpm",
+            "shortname": "node-php-fpm",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": []
+        },
+        "Utility": {
+            "name": "Utility",
+            "shortname": "Utility",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "lib/utility.js",
+            "line": 1,
+            "description": "Utility Methods",
+            "is_constructor": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "lib/fastcgi.js",
+            "line": 19,
+            "description": "Make headers for FPM\n\nSome headers have to be modified to fit the FPM\nhandler and some others don't. For instance, the Content-Type\nheader, when received, has to be made upper-case and the \nhyphen has to be made into an underscore. However, the Accept\nheader has to be made uppercase, hyphens turned into underscores\nand the string \"HTTP_\" has to be appended to the header.",
+            "params": [
+                {
+                    "name": "array",
+                    "description": "headers An array of existing user headers from Node.js"
+                },
+                {
+                    "name": "array",
+                    "description": "params  An array of pre-built headers set in serveFpm"
+                }
+            ],
+            "return": {
+                "description": "array         An array of complete headers."
+            },
+            "class": "node-php-fpm"
+        },
+        {
+            "file": "lib/fastcgi.js",
+            "line": 53,
+            "description": "Interact with FPM\n\nThis function is used to interact with the FastCGI protocol\nusing net.Stream and the fastcgi module.\n\nWe pass the request, the response, some params and some options\nthat we then use to serve the response to our client.",
+            "params": [
+                {
+                    "name": "object",
+                    "description": "Request  The HTTP Request object."
+                },
+                {
+                    "name": "object",
+                    "description": "Response The HTTP Response object to use."
+                },
+                {
+                    "name": "array",
+                    "description": "Params   A list of parameters to pass to FCGI"
+                },
+                {
+                    "name": "array",
+                    "description": "options  A list of options like the port of the fpm server."
+                }
+            ],
+            "return": {
+                "description": "void"
+            },
+            "class": "node-php-fpm"
+        },
+        {
+            "file": "lib/serve-php.js",
+            "line": 59,
+            "description": "Waits for parent Express service to use() serve-php.",
+            "class": "node-php-fpm"
+        },
+        {
+            "file": "lib/serve-php.js",
+            "line": 74,
+            "description": "Create Working Directory, setup php-fpm config files, etc.",
+            "class": "node-php-fpm"
+        },
+        {
+            "file": "lib/serve-php.js",
+            "line": 105,
+            "description": "Don't spawn php-fpm until environment is valid and parent Express service has accepted us as middleware.",
+            "class": "node-php-fpm"
+        },
+        {
+            "file": "lib/serve-php.js",
+            "line": 158,
+            "description": "Instance Properties",
+            "class": "node-php-fpm"
+        },
+        {
+            "file": "lib/serve-php.js",
+            "line": 164,
+            "class": "node-php-fpm"
+        },
+        {
+            "file": "lib/serve-php.js",
+            "line": 190,
+            "class": "node-php-fpm"
+        },
+        {
+            "file": "lib/serve-php.js",
+            "line": 202,
+            "class": "node-php-fpm"
+        },
+        {
+            "file": "lib/serve-php.js",
+            "line": 222,
+            "description": "Route Stuff",
+            "class": "node-php-fpm"
+        },
+        {
+            "file": "lib/serve-php.js",
+            "line": 237,
+            "description": "Constructor Properties",
+            "class": "node-php-fpm"
+        },
+        {
+            "file": "lib/serve-php.js",
+            "line": 256,
+            "description": "Create Instance",
+            "class": "node-php-fpm"
+        },
+        {
+            "file": "lib/utility.js",
+            "line": 13,
+            "description": "Placeholder Method",
+            "itemtype": "method",
+            "name": "noop",
+            "class": "Utility"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Missing item type\nMake headers for FPM\n\nSome headers have to be modified to fit the FPM\nhandler and some others don't. For instance, the Content-Type\nheader, when received, has to be made upper-case and the \nhyphen has to be made into an underscore. However, the Accept\nheader has to be made uppercase, hyphens turned into underscores\nand the string \"HTTP_\" has to be appended to the header.",
+            "line": " lib/fastcgi.js:19"
+        },
+        {
+            "message": "Missing item type\nInteract with FPM\n\nThis function is used to interact with the FastCGI protocol\nusing net.Stream and the fastcgi module.\n\nWe pass the request, the response, some params and some options\nthat we then use to serve the response to our client.",
+            "line": " lib/fastcgi.js:53"
+        },
+        {
+            "message": "Missing item type\nWaits for parent Express service to use() serve-php.",
+            "line": " lib/serve-php.js:59"
+        },
+        {
+            "message": "Missing item type\nCreate Working Directory, setup php-fpm config files, etc.",
+            "line": " lib/serve-php.js:74"
+        },
+        {
+            "message": "Missing item type\nDon't spawn php-fpm until environment is valid and parent Express service has accepted us as middleware.",
+            "line": " lib/serve-php.js:105"
+        },
+        {
+            "message": "Missing item type\nInstance Properties",
+            "line": " lib/serve-php.js:158"
+        },
+        {
+            "message": "Missing item type",
+            "line": " lib/serve-php.js:164"
+        },
+        {
+            "message": "Missing item type",
+            "line": " lib/serve-php.js:190"
+        },
+        {
+            "message": "Missing item type",
+            "line": " lib/serve-php.js:202"
+        },
+        {
+            "message": "Missing item type\nRoute Stuff",
+            "line": " lib/serve-php.js:222"
+        },
+        {
+            "message": "Missing item type\nConstructor Properties",
+            "line": " lib/serve-php.js:237"
+        },
+        {
+            "message": "Missing item type\nCreate Instance",
+            "line": " lib/serve-php.js:256"
+        }
+    ]
+}
